@@ -1,0 +1,42 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+
+.trafficLight {
+  background-color: black;
+  color: white;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+
+  .red {
+    background: red;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+
+  .yellow {
+    background: yellow;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  .green {
+    background: green;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  .selected {
+    filter: drop-shadow(0 0 0.75rem yellow);
+  }
+}
