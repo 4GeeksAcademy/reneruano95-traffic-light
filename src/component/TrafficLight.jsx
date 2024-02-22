@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 
 const TrafficLight = () => {
-  const [selected, setSelected] = useState("");
-
-  const handleFn = () => {
-    setSelected((prev) => (prev = "selected"));
-  };
+  const [color, setColor] = useState("");
 
   return (
     <div className="container h-100 d-flex justify-content-center align-items-center ">
       <div className="trafficLight">
-        <div className={`red ${selected}`} onClick={handleFn}></div>
-        <div className={`yellow ${selected}`} onClick={handleFn}></div>
-        <div className={`green ${selected}`} onClick={handleFn}></div>
+        <div
+          className={`red ${color === "red" ? "selected" : ""}`}
+          onClick={() => setColor((prev) => (prev = "red"))}
+        ></div>
+
+        <div
+          className={`yellow ${color === "yellow" ? "selected" : ""}`}
+          onClick={() => setColor((prev) => (prev = "yellow"))}
+        ></div>
+
+        <div
+          className={`green ${color === "green" ? "selected" : ""}`}
+          onClick={() => setColor((prev) => (prev = "green"))}
+        ></div>
       </div>
     </div>
   );
