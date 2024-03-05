@@ -52,6 +52,10 @@ module.exports = {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
         use: ["file-loader"],
       }, //for fonts
+      {
+        test: /\.(mp3|wav)$/,
+        use: ["file-loader"],
+      }, //for sounds
     ],
   },
   resolve: {

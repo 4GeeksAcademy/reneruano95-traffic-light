@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
+import useSound from "use-sound";
+import carHorn from "../assets/mixkit-classic-car-horn-1565.mp3";
+
 const TrafficLight = () => {
   const [color, setColor] = useState("");
+
+  const [play] = useSound(carHorn);
 
   const handleClick = () => {
     const colors = ["red", "yellow", "green"];
@@ -11,6 +16,11 @@ const TrafficLight = () => {
     const nextIndex = (currentIndex + 1) % colors.length;
     console.log("nextIndex", nextIndex);
     setColor(colors[nextIndex]);
+  };
+
+  const handleGreen = () => {
+    play();
+    setColor((prev) => (prev = "green"));
   };
 
   return (
@@ -28,7 +38,7 @@ const TrafficLight = () => {
 
         <div
           className={`green ${color === "green" ? "selected" : ""}`}
-          onClick={() => setColor((prev) => (prev = "green"))}
+          onClick={handleGreen}
         ></div>
       </div>
 
