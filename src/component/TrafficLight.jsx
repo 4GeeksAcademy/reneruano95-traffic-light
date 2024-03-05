@@ -17,6 +17,12 @@ const TrafficLight = () => {
     console.log("nextIndex", nextIndex);
     setColor(colors[nextIndex]);
   };
+  const handleRed = () => {
+    setColor((prev) => (prev = "red"));
+  };
+  const handleYellow = () => {
+    setColor((prev) => (prev = "yellow"));
+  };
 
   const handleGreen = () => {
     play();
@@ -28,12 +34,12 @@ const TrafficLight = () => {
       <div className="trafficLight">
         <div
           className={`red ${color === "red" ? "selected" : ""}`}
-          onClick={() => setColor((prev) => (prev = "red"))}
+          onClick={handleRed}
         ></div>
 
         <div
           className={`yellow ${color === "yellow" ? "selected" : ""}`}
-          onClick={() => setColor((prev) => (prev = "yellow"))}
+          onClick={handleYellow}
         ></div>
 
         <div
