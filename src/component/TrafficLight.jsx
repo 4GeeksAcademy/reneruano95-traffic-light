@@ -8,15 +8,6 @@ const TrafficLight = () => {
 
   const [play] = useSound(carHorn);
 
-  const handleClick = () => {
-    const colors = ["red", "yellow", "green"];
-    const currentIndex = colors.indexOf(color);
-    console.log("currentIndex", currentIndex);
-
-    const nextIndex = (currentIndex + 1) % colors.length;
-    console.log("nextIndex", nextIndex);
-    setColor(colors[nextIndex]);
-  };
   const handleRed = () => {
     setColor((prev) => (prev = "red"));
   };
@@ -27,6 +18,16 @@ const TrafficLight = () => {
   const handleGreen = () => {
     play();
     setColor((prev) => (prev = "green"));
+  };
+
+  const handleClick = () => {
+    const colors = ["red", "yellow", "green"];
+    const currentIndex = colors.indexOf(color);
+    console.log("currentIndex", currentIndex);
+
+    const nextIndex = (currentIndex + 1) % colors.length;
+    console.log("nextIndex", nextIndex);
+    setColor(colors[nextIndex]);
   };
 
   return (
